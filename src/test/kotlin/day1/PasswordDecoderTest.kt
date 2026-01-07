@@ -1,7 +1,7 @@
 package day1
 
 import org.junit.jupiter.api.Nested
-import java.io.File
+import utils.FileUtils.retrieveResourceFile
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -257,11 +257,5 @@ class PasswordDecoderTest {
             // Assert
             assertEquals(19, position)
         }
-    }
-
-    fun retrieveResourceFile(fileName: String): File {
-        val resource = this::class.java.classLoader.getResource(fileName)
-            ?: throw IllegalArgumentException("Resource not found: $fileName")
-        return File(resource.toURI())
     }
 }
